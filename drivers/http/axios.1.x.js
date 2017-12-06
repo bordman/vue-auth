@@ -43,11 +43,7 @@ module.exports = {
   },
 
   _http: function (data) {
-    var http = this.options.Vue.axios(data);
-
-    http.then(data.success, data.error);
-
-    return http;
+    return this.options.Vue.axios(data).then(data.success, data.error);
   },
 
   _getHeaders: function (res) {
@@ -55,6 +51,6 @@ module.exports = {
   },
 
   _setHeaders: function (req, headers) {
-    req.headers.common = Object.assign({}, req.headers.common, headers);
+    req.headers.common = Object.assign(req.headers.common, headers);
   }
 }

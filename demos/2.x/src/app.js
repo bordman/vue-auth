@@ -105,7 +105,7 @@ Vue.use(require('../../../src/index.js'), {
         clientId: '196729390739201'
     },
     googleOauth2Data: {
-        clientId: '547886745924-4vrbhl09fr3t771drtupacct6f788566.apps.googleusercontent.com'
+        clientId: '337636458732-tatve7q4qo4gnpfcenbv3i47id4offbg.apps.googleusercontent.com'
     }
 });
 
