@@ -155,7 +155,7 @@ module.exports = function () {
             return;
         }
 
-        _processInvalidToken.call(this, res, __transitionThis);
+        //_processInvalidToken.call(this, res, __transitionThis);
 
         token = this.options.auth.response.call(this, res);
         if (token) {
