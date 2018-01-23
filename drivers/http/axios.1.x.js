@@ -26,20 +26,22 @@ module.exports = {
         if (error && error.response) {
           res.call(_this, error.response);
         }
-        
+
         return Promise.reject(error);
       })
     }
   },
 
   _invalidToken: function (res) {
-    if (res.status === 401) {
-      return true;
+    if(res !== undefined) {
+      if (res.status === 401) {
+        return true;
+      }
     }
   },
 
   _httpData: function (res) {
-    return res.data || {};
+      return res.data || {};
   },
 
   _http: function (data) {
@@ -47,10 +49,12 @@ module.exports = {
   },
 
   _getHeaders: function (res) {
-    return res.headers;
+    if(res !== undefined){
+      return res.headers;
+    }
   },
 
   _setHeaders: function (req, headers) {
-    req.headers.common = Object.assign(req.headers.common, headers);
+      req.headers.common = Object.assign(req.headers.common, headers);
   }
 }
